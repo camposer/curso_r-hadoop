@@ -14,7 +14,7 @@
 - R
   - https://www.r-project.org/
   - https://cran.r-project.org/doc/manuals/r-patched/R-intro.html
-  - http://es.slideshare.net/ChiuYW/r-language-tutorial
+  - http://es.slideshare.net/metamx/r-workshop-for-beginners
 - Using Hadoop with R: It Depends
   - http://blog.revolutionanalytics.com/2015/06/using-hadoop-with-r-it-depends.html
 - Using R with Hadoop
