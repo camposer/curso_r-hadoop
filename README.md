@@ -2,6 +2,8 @@
 
 ## Agenda
 
+- Hadoop
+- R
 - Streaming Hadoop nativo + R
 - RHadoop
 - RHive
