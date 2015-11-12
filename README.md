@@ -2,10 +2,11 @@
 
 ## Agenda
 
-- Streaming Hadoop nativo
-- Alternativas de uso R + hadoop 
-- RHive
+- Hadoop
+- R
+- Streaming Hadoop nativo + R
 - RHadoop
+- RHive
 
 ## Recursos
 
