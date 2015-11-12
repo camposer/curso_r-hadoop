@@ -14,16 +14,16 @@ $ head -2000 movies-lines.txt > movies-lines2000.txt
 
 3.- Ejecutar el comando map.awk sobre el archivo movies-lines2000.txt
 ```
-$ ./map.R movies-lines2000.txt 
+$ cat movies-lines2000.txt | map.R
 ```
 
 4.- Ejecutar el comando map.awk con el sort y el reduce.awk 
 ```
-$ ./map.R movies-lines2000.txt | sort | ./reduce.R > resultado
+$ cat movies-lines2000.txt | ./map.R | sort -k1 | ./reduce.R
 ```
 
 ## MapReduce
 
 $ hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.6.0.jar -mapper map.R -reducer reduce.R -input /ejemplos/movies/movies-lines2000.txt -output /ejemplos/movies/output
 
-NOTA: El archivo movies-lines2000.txt previamente debió subirse al HDFS en la carpeta /ejemplos/movies
+NOTA: El archivo movies-lines2000.txt previamente debió subirse al HDFS en la carpeta /ejemplos/movies. Recuerde suprimir la cabecera del archivo
