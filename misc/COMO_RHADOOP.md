@@ -1,6 +1,10 @@
 # Cómo instalar RHadoop
 
-1.- Para instalar RHadoop debe tener definidas las siguientes variables de entorno: `HADOOP_HOME`, `HADOOP_CONF=$HADOOP_HOME/conf` y `HADOOP_CMD=$HADOOP_HOME/bin/hadoop`
+1.- Para instalar RHadoop debe tener definidas las siguientes variables de entorno: 
+- `HADOOP_HOME`
+- `HADOOP_CONF=$HADOOP_HOME/conf`
+- `HADOOP_CMD=$HADOOP_HOME/bin/hadoop`
+- `HADOOP_STREAMING=$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.6.2.jar`
 
 2.- Debe tener una versión de R > 3.2. Para comprobar la versión instalada:
 ```
@@ -18,15 +22,13 @@ $ sudo apt-get update
 $ sudo aptitude install r-base
 ```
 
-4.- Instalar RHadoop (rmr + rhdfs + rhbase)
+4.- Instalar RHadoop RMR
 - Para instalar el paquete `devtools` hay determinados paquetes que deben estar instalados
 ```
 $ sudo aptitude install libcurl4-openssl-dev libxml2-dev 
 ```
 
-- Descargar los paquetes de RHadoop de: https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads
-	- rmr
-	- rhdfs
+- Descargar RMR de RHadoop de: https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads
 
 - Instalar paquetes de RHadoop (`DOWNLOAD_FOLDER` representa la ruta absoluta donde se han descargado los ficheros)
 ```
@@ -35,6 +37,4 @@ $ R
 > install.packages("devtools")
 > library(devtools)
 > install.packages("$DOWNLOAD_FOLDER/rmr2_3.3.1.tar.gz")
-> install.packages("$DOWNLOAD_FOLDER/rhdfs_1.0.8.tar.gz")
-
 ```
