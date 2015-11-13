@@ -17,19 +17,17 @@ movies.mapred.reduce <- function(k, v) {
 	score <- sapply(data, function(x) as.numeric(x[1]))
 	count <- sapply(data, function(x) as.numeric(x[2]))
 
-	keyval(k, paste(sum(score), sum(count)))
+	keyval(k, paste(sum(score) / sum(count), min(score), max(score)))
 }
 
 movies.mapred.result <- mapreduce(
 	input = "movies-lines2000.txt", # change this path as needed
 	map = movies.mapred.map,
-	reduce = movies.mapred.reduce,
 	combine = NULL,
+	reduce = movies.mapred.reduce,
 	input.format = "text",
 	output.format = "csv")
 
 result = from.dfs(movies.mapred.result, format = "csv")
 
 print(result)
-
-
