@@ -3,14 +3,20 @@ movies <- read.csv("~/movies-lines2000.txt", sep="|", quote="")
 #hist(movies$score)
 
 #library(ggplot2)
-#qplot()
+#qplot(time, data = movies, geom="density")
 
-promedio <- mean(movies$score)
-menor <- min(movies$score)
-mayor <- max(movies$score)
+scoreStatsByProductId <- function() {
+	products <- levels(movies$productId)
 
-print(paste("promedio", promedio))
-print(paste("menor", menor))
-print(paste("mayor", mayor))
+	# this solves the problem, but it's very inefficient!
+	# better to do a simple loop and calculate
+	result <- sapply(products, function(productId) {
+		avg <- mean(movies$score[movies$productId == productId])
+		min <- min(movies$score[movies$productId == productId])
+		max <- max(movies$score[movies$productId == productId])
 
-# Incluir por película mean(movies$score[movies$productId == "B0016OLXN2"])
+		print(paste("productId", productId, "avg", avg, "min", min, "max", max))	
+	})
+}
+
+scoreStatsByProductId()
