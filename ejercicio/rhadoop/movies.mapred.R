@@ -8,16 +8,16 @@ movies.mapred.map <- function(k,v) {
 	productId <- sapply(data, function(x) x[2])
 	score <- sapply(data, function(x) as.numeric(x[6]))
 
-	keyval(productId, paste(score, 1, sep="|"))
+	keyval(productId, paste(score, 1, sep="\t"))
 }
 
 movies.mapred.reduce <- function(k, v) {
-	data <- strsplit(v, "|", fixed = TRUE)
+	data <- strsplit(v, "\t")
 
 	score <- sapply(data, function(x) as.numeric(x[1]))
 	count <- sapply(data, function(x) as.numeric(x[2]))
 
-	keyval(k, c(sum(score), sum(count)))
+	keyval(k, paste(sum(score), sum(count)))
 }
 
 movies.mapred.result <- mapreduce(
@@ -27,4 +27,9 @@ movies.mapred.result <- mapreduce(
 	combine = NULL,
 	input.format = "text",
 	output.format = "csv")
+
+result = from.dfs(movies.mapred.result, format = "csv")
+
+print(result)
+
 
