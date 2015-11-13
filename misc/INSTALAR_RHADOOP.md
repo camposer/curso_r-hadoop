@@ -25,7 +25,7 @@ $ sudo aptitude install r-base
 4.- Instalar RHadoop RMR
 - Para instalar el paquete `devtools` hay determinados paquetes que deben estar instalados
 ```
-$ sudo aptitude install libcurl4-openssl-dev libxml2-dev 
+$ sudo aptitude install libcurl4-openssl-dev libxml2-dev libssl-dev
 ```
 
 - Descargar RMR de RHadoop de: https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads
