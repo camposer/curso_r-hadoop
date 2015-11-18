@@ -1,6 +1,6 @@
 # Cómo instalar RHive
 
-1.- Instalar Rserve
+1.- Instalar dependencias (Rserve y rJava)
 ```
 $ R
 > install.packages("Rserve")
