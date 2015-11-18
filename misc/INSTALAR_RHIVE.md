@@ -4,6 +4,7 @@
 ```
 $ R
 > install.packages("Rserve")
+> install.packages("rJava")
 ```
 
 2.- Instalar RHive
