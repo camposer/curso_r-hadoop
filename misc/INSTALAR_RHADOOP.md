@@ -28,7 +28,7 @@ $ sudo aptitude install r-base
 $ sudo aptitude install libcurl4-openssl-dev libxml2-dev libssl-dev
 ```
 
-- Descargar RMR de RHadoop de: https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads
+- Descargar RMR de RHadoop de: https://github.com/RevolutionAnalytics/RHadoop/wiki/Downloads (esto fue escrito para la versión: rmr v2_3.3.1)
 
 - Instalar paquetes de RHadoop (`DOWNLOAD_FOLDER` representa la ruta absoluta donde se han descargado los ficheros)
 ```
@@ -36,5 +36,9 @@ $ sudo R CMD javareconf
 $ R
 > install.packages("devtools")
 > library(devtools)
+> install.packages("RJSONIO")
+> install.packages("functional")
+> install.packages("reshape2")
+> install.packages("caTools")
 > install.packages("$DOWNLOAD_FOLDER/rmr2_3.3.1.tar.gz")
 ```
